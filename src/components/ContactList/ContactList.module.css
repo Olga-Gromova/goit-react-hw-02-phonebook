@@ -20,6 +20,7 @@
 }
 
 .contactListItemBtn:hover {
-    background-color: rgba(23, 26, 32, 1);
+    background-color: #972c28;
     cursor: pointer;
+    box-shadow: #972c28 0px 5px 15px;
 }
