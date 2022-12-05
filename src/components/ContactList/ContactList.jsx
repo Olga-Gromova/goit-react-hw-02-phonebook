@@ -1,24 +1,23 @@
+import { ContactElement } from 'components/ContactElement/ContactElement';
 import propTypes from 'prop-types';
-import css from './ContactList.module.css';
+
 
 export const ContactList = ({ contacts, handleDelete }) => (
-  <div className={css.wraperContactList}>
-    <ul className={css.contactList}>
-      {contacts.map((contact, id) => (
-        <li key={id} className={css.contactListItem}>
-          {contact.name}: {contact.number}
-          <button
-            type="button"
-            className={css.contactListItemBtn}
-            onClick={() => handleDelete(contact.id)}
-          >
-            Delete
-          </button>
-        </li>
+  
+    <ul>
+      {contacts.map(({ id, name, number }) => (
+        <ContactElement
+        key={id}
+        name={name}
+        number={number}
+        id={id}
+        handleDelete={handleDelete}/>
+
       ))}
     </ul>
-  </div>
+ 
 );
+
 
 ContactList.propTypes = {
   contacts: propTypes.arrayOf(
