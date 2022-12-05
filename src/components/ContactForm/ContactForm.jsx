@@ -2,13 +2,15 @@ import propTypes from 'prop-types';
 import React, { Component } from 'react';
 import css from './ContactForm.module.css';
 
-
 export class ContactForm extends Component {
+  static propTypes = {
+   handleSubmit: propTypes.func.isRequired
+  }
+
   state = {
     name: '',
     number: '',
   };
-
 
   handleChange = e => {
     const { name, value } = e.target;
@@ -64,8 +66,4 @@ export class ContactForm extends Component {
     );
 }
 }
-
-ContactForm.propTypes = {
-  handleSubmit: propTypes.func,
-};
 
